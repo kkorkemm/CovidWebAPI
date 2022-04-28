@@ -46,8 +46,13 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PatientID" Type="int" Nullable="false" />
-          <Property Name="IsSickBefore" Type="bit" />
-          <Property Name="IsSomeWhat" Type="bit" />
+          <Property Name="IsBeenInPlaces" Type="bit" />
+          <Property Name="IsBeenContactedInPlaces" Type="bit" />
+          <Property Name="IsBeenContacted" Type="bit" />
+          <Property Name="IsWorking" Type="bit" />
+          <Property Name="IsSick" Type="bit" />
+          <Property Name="IsCovidBefore" Type="bit" />
+          <Property Name="IsSickNow" Type="bit" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -327,9 +332,14 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PatientID" Type="Int32" Nullable="false" />
-          <Property Name="IsSickBefore" Type="Boolean" />
-          <Property Name="IsSomeWhat" Type="Boolean" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Questionnnare_Patient" FromRole="Questionnnare" ToRole="Patient" />
+          <Property Name="IsBeenInPlaces" Type="Boolean" />
+          <Property Name="IsBeenContactedInPlaces" Type="Boolean" />
+          <Property Name="IsBeenContacted" Type="Boolean" />
+          <Property Name="IsWorking" Type="Boolean" />
+          <Property Name="IsSick" Type="Boolean" />
+          <Property Name="IsCovidBefore" Type="Boolean" />
+          <Property Name="IsSickNow" Type="Boolean" />
         </EntityType>
         <EntityType Name="Review">
           <Key>
@@ -613,11 +623,16 @@
           <EntitySetMapping Name="Questionnnare">
             <EntityTypeMapping TypeName="CovidSystemDBModel.Questionnnare">
               <MappingFragment StoreEntitySet="Questionnnare">
+                <ScalarProperty Name="IsSickNow" ColumnName="IsSickNow" />
+                <ScalarProperty Name="IsCovidBefore" ColumnName="IsCovidBefore" />
+                <ScalarProperty Name="IsSick" ColumnName="IsSick" />
+                <ScalarProperty Name="IsWorking" ColumnName="IsWorking" />
+                <ScalarProperty Name="IsBeenContacted" ColumnName="IsBeenContacted" />
+                <ScalarProperty Name="IsBeenContactedInPlaces" ColumnName="IsBeenContactedInPlaces" />
+                <ScalarProperty Name="IsBeenInPlaces" ColumnName="IsBeenInPlaces" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="IsSickBefore" ColumnName="IsSickBefore" />
-                <ScalarProperty Name="IsSomeWhat" ColumnName="IsSomeWhat" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Review">

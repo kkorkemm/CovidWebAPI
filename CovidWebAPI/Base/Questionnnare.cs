@@ -17,8 +17,13 @@ namespace CovidWebAPI.Base
     {
         public int ID { get; set; }
         public int PatientID { get; set; }
-        public Nullable<bool> IsSickBefore { get; set; }
-        public Nullable<bool> IsSomeWhat { get; set; }
+        public Nullable<bool> IsBeenInPlaces { get; set; }
+        public Nullable<bool> IsBeenContactedInPlaces { get; set; }
+        public Nullable<bool> IsBeenContacted { get; set; }
+        public Nullable<bool> IsWorking { get; set; }
+        public Nullable<bool> IsSick { get; set; }
+        public Nullable<bool> IsCovidBefore { get; set; }
+        public Nullable<bool> IsSickNow { get; set; }
 
         [JsonIgnore]
         public virtual Patient Patient { get; set; }
