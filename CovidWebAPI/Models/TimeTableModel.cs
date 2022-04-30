@@ -16,6 +16,7 @@ namespace CovidWebAPI.Models
             Time = timeTable.Time;
             VaccinationPoint = timeTable.VaccinationPoint.Name;
             DoctorName = timeTable.Doctor.FullName;
+            PatientCount = timeTable.Appointment.Count();
         }
 
 
@@ -24,6 +25,7 @@ namespace CovidWebAPI.Models
         public TimeSpan Time { get; set; }
         public string VaccinationPoint { get; set; }
         public string DoctorName { get; set; }
+        public int PatientCount { get; set; }
 
     }
 }
